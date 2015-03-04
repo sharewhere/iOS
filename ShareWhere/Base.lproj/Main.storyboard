@@ -199,6 +199,34 @@
             </objects>
             <point key="canvasLocation" x="1187.5" y="-130.5"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="caF-gk-D7C">
+            <objects>
+                <viewController id="fJN-gA-6Qw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v9c-do-bCq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="kEj-BK-Mkq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="ShareWhere" id="eXz-b7-c5A"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ywB-Sq-uLj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1651.5" y="-124.5"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="ptj-E5-5Mh">
             <objects>

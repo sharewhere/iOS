@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C7EAA741AA50C4B006B0A44 /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C7EAA731AA50C4B006B0A44 /* ic_launcher.png */; };
 		3C9331EA1AA243FB003D4C29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9331E91AA243FB003D4C29 /* AppDelegate.swift */; };
 		3C9331EC1AA243FB003D4C29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9331EB1AA243FB003D4C29 /* ViewController.swift */; };
 		3C9331EF1AA243FB003D4C29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C9331ED1AA243FB003D4C29 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		3C93322A1AA245F2003D4C29 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C93321A1AA245F2003D4C29 /* Icon@2x.png */; };
 		3C93322C1AA24DFE003D4C29 /* LoginVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C93322B1AA24DFE003D4C29 /* LoginVCViewController.swift */; };
 		3C93322E1AA24F1A003D4C29 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C93322D1AA24F1A003D4C29 /* SignupVC.swift */; };
+		3CB22EFF1AA68BC80010B34E /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB22EFE1AA68BC80010B34E /* ic_launcher.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C7EAA731AA50C4B006B0A44 /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_launcher.png; path = ../../../../../Desktop/ic_launcher.png; sourceTree = "<group>"; };
 		3C9331E41AA243FB003D4C29 /* ShareWhere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareWhere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C9331E81AA243FB003D4C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C9331E91AA243FB003D4C29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 		3C93321A1AA245F2003D4C29 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../../../../../../Desktop/AppIcon.appiconset/Icon@2x.png"; sourceTree = "<group>"; };
 		3C93322B1AA24DFE003D4C29 /* LoginVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVCViewController.swift; sourceTree = "<group>"; };
 		3C93322D1AA24F1A003D4C29 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		3CB22EFE1AA68BC80010B34E /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,8 @@
 				3C9331EB1AA243FB003D4C29 /* ViewController.swift */,
 				3C9331ED1AA243FB003D4C29 /* Main.storyboard */,
 				3C9331F01AA243FB003D4C29 /* Images.xcassets */,
+				3C7EAA731AA50C4B006B0A44 /* ic_launcher.png */,
+				3CB22EFE1AA68BC80010B34E /* ic_launcher.png */,
 				3C9331F21AA243FB003D4C29 /* LaunchScreen.xib */,
 				3C9331E71AA243FB003D4C29 /* Supporting Files */,
 			);
@@ -256,6 +262,7 @@
 				3C9332271AA245F2003D4C29 /* Icon-Small@2x.png in Resources */,
 				3C9331F41AA243FB003D4C29 /* LaunchScreen.xib in Resources */,
 				3C9332231AA245F2003D4C29 /* Icon-76@2x.png in Resources */,
+				3CB22EFF1AA68BC80010B34E /* ic_launcher.png in Resources */,
 				3C9331F11AA243FB003D4C29 /* Images.xcassets in Resources */,
 				3C93321C1AA245F2003D4C29 /* Icon-40@2x.png in Resources */,
 				3C93322A1AA245F2003D4C29 /* Icon@2x.png in Resources */,
@@ -268,6 +275,7 @@
 				3C93321B1AA245F2003D4C29 /* Icon-40.png in Resources */,
 				3C9332251AA245F2003D4C29 /* Icon-Small-50@2x.png in Resources */,
 				3C93321E1AA245F2003D4C29 /* Icon-60@2x.png in Resources */,
+				3C7EAA741AA50C4B006B0A44 /* ic_launcher.png in Resources */,
 				3C9332211AA245F2003D4C29 /* Icon-72@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
