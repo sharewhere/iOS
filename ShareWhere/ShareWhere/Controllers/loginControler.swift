@@ -11,19 +11,17 @@ import UIKit
 class loginController: UIViewController {
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
-    var server: String!
-    var useNetwork = true;
+    var server = networkService().servername() + "/login";
+    var useNetwork = networkService().bypass();
+    var DEBUG = testingService().canDebug();
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        server = networkService().servername();
-        server = server + "/login";
-        NSLog("server being used: %@", server);
-        
-        useNetwork = networkService().bypass();
-        NSLog("Bypass: %@", useNetwork);
+        if(DEBUG) {
+            NSLog("LoginVC - server being used: %@", server);
+            NSLog("LoginVC - Using network: %@", useNetwork ? "True" : "False");
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,7 +38,7 @@ class loginController: UIViewController {
             
             var alertView:UIAlertView = UIAlertView()
             alertView.title = "Sign in Failed!"
-            alertView.message = "Please enter Username and Password"
+            alertView.message = "Please enter a Username and Password"
             alertView.delegate = self
             alertView.addButtonWithTitle("OK")
             alertView.show()
@@ -48,16 +46,14 @@ class loginController: UIViewController {
         else {
             if(useNetwork) {
                 
-                NSLog("Should not make it here");
-                
                 var post:NSString = "username=\(username)&password=\(password)"
                 
-                NSLog("PostData: %@",post);
+                if(DEBUG) { NSLog("PostData: %@",post);}
                 
                 var urlStr : NSString = server.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
                 var url:NSURL = NSURL(string:urlStr)!
                 
-                NSLog("url being used: %@", url);
+                if(DEBUG) { NSLog("url being used: %@", url);}
                 
                 var postData:NSData = post.dataUsingEncoding(NSASCIIStringEncoding)!
                 
@@ -79,23 +75,17 @@ class loginController: UIViewController {
                 if ( urlData != nil ) {
                     let res = response as NSHTTPURLResponse!;
                     
-                    NSLog("Response code: %ld", res.statusCode);
-                    
-                    //NSLog("HTTP response headers: %@", res.allHeaderFields);
+                    if(DEBUG) { NSLog("Response code: %ld", res.statusCode);}
                     
                     var cookie = NSHTTPCookie.cookiesWithResponseHeaderFields(res.allHeaderFields, forURL: url)
-                    
-                    //NSLog("Cookie: %@", cookie);
-                    
-                    NSLog("Cookie val: %@", cookie);
+
+                    if(DEBUG) { NSLog("Cookie: %@", cookie);}
                     
                     if (res.statusCode >= 200 && res.statusCode < 300)
                     {
                         var responseData:NSString  = NSString(data:urlData!, encoding:NSUTF8StringEncoding)!
                         
-                        NSLog("Response ==> %@", responseData);
-                        
-                        
+                        if(DEBUG) { NSLog("Response ==> %@", responseData);}
                         
                         var error: NSError?
                         
@@ -104,15 +94,16 @@ class loginController: UIViewController {
                         
                         let success:NSString = jsonData.valueForKey("success") as NSString
                         
-                        NSLog("Success: %@", success);
+                        if(DEBUG) { NSLog("Success: %@", success);}
                         
                         if(success == "true")
                         {
-                            NSLog("Login SUCCESS");
+                            if(DEBUG) { NSLog("Login SUCCESS");}
                             
                             
                             var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
                             prefs.setObject(username, forKey: "USERNAME")
+                            prefs.setObject(password, forKey: "PASSWORD")
                             prefs.setInteger(1, forKey: "ISLOGGEDIN")
                             // prefs.setObject(cookie, forKey: "COOKIE")
                             prefs.synchronize()
@@ -158,14 +149,10 @@ class loginController: UIViewController {
             }
             // when the servers are unavailable or for testing
             else {
-                NSLog("Sign Up SUCCESS");
+                NSLog("Sign Up BYPASSED");
                 var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
                 prefs.setObject("networkBypass", forKey: "USERNAME")
                 prefs.setInteger(1, forKey: "ISLOGGEDIN")
-                //prefs.setObject(cookie, forKey: "COOKIE")
-                
-                
-                
                 prefs.synchronize()
                 
                 self.performSegueWithIdentifier("loginTOoverviewSegue", sender: self)

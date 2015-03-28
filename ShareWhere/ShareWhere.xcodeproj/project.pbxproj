@@ -21,6 +21,7 @@
 		3C323B2B1AC601C50099A70B /* plus-simple-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C323B251AC601C50099A70B /* plus-simple-7.png */; };
 		3C323B2C1AC601C50099A70B /* search-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C323B261AC601C50099A70B /* search-7.png */; };
 		3C323B2E1AC605230099A70B /* loginControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C323B2D1AC605230099A70B /* loginControler.swift */; };
+		3C5D3E4A1AC6FE5D00A95463 /* testingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D3E491AC6FE5D00A95463 /* testingService.swift */; };
 		3CA1F9D61AC6071400E16372 /* networkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA1F9D51AC6071400E16372 /* networkService.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		3C323B251AC601C50099A70B /* plus-simple-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "plus-simple-7.png"; path = "Images/plus-simple-7.png"; sourceTree = "<group>"; };
 		3C323B261AC601C50099A70B /* search-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "search-7.png"; path = "Images/search-7.png"; sourceTree = "<group>"; };
 		3C323B2D1AC605230099A70B /* loginControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginControler.swift; sourceTree = "<group>"; };
+		3C5D3E491AC6FE5D00A95463 /* testingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testingService.swift; sourceTree = "<group>"; };
 		3CA1F9D51AC6071400E16372 /* networkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = networkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				3CA1F9D51AC6071400E16372 /* networkService.swift */,
+				3C5D3E491AC6FE5D00A95463 /* testingService.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			files = (
 				3CA1F9D61AC6071400E16372 /* networkService.swift in Sources */,
 				3C0E82B51AC6059C00D4D55F /* registerController.swift in Sources */,
+				3C5D3E4A1AC6FE5D00A95463 /* testingService.swift in Sources */,
 				3C1089EC1AC5F9D10020810A /* ViewController.swift in Sources */,
 				3C1089EA1AC5F9D10020810A /* AppDelegate.swift in Sources */,
 				3C323B2E1AC605230099A70B /* loginControler.swift in Sources */,

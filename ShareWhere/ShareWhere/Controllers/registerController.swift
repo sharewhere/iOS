@@ -15,20 +15,16 @@ class registerController: UIViewController {
     @IBOutlet weak var txtSignupZipcode: UITextField!
     @IBOutlet weak var txtSignupEmail: UITextField!
  
-    var server: String!
-    var useNetwork = true;
+    var server = networkService().servername() + "/register";
+    var useNetwork  = networkService().bypass();
+    var DEBUG = testingService().canDebug();
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        server = networkService().servername();
-        server = server + "/register";
-        NSLog("server being used: %@", server);
-        
-        useNetwork = networkService().bypass();
-        NSLog("bypass: %@", useNetwork);
-
+        if(DEBUG) {
+            NSLog("LoginVC - server being used: %@", server);
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -74,14 +70,11 @@ class registerController: UIViewController {
             if(useNetwork) {
                 var post:NSString = "username=\(username)&password=\(password)&email_address=\(email)&zip_code=\(zipcode)"
                 
-                NSLog("PostData: %@",post);
+                if(DEBUG) {NSLog("PostData: %@",post);}
                 
                 var urlStr : NSString = server.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
                 var url:NSURL = NSURL(string:urlStr)!
-                
-                NSLog("url being used: %@", url);
-                
-                
+
                 var postData:NSData = post.dataUsingEncoding(NSASCIIStringEncoding)!
                 
                 var postLength:NSString = String( postData.length )
@@ -102,19 +95,18 @@ class registerController: UIViewController {
                 if ( urlData != nil ) {
                     let res = response as NSHTTPURLResponse!;
                     
-                    NSLog("Response code: %ld", res.statusCode);
-                    
-                    //NSLog("HTTP response headers: %@", res.allHeaderFields);
+                    if(DEBUG) {NSLog("Response code: %ld", res.statusCode);}
                     
                     var cookie = NSHTTPCookie.cookiesWithResponseHeaderFields(res.allHeaderFields, forURL: url)
                     
-                    //NSLog("Cookie: %@", cookie);
+                    
+                    if(DEBUG) {NSLog("Cookie: %@", cookie);}
                     
                     if (res.statusCode >= 200 && res.statusCode < 300)
                     {
                         var responseData:NSString  = NSString(data:urlData!, encoding:NSUTF8StringEncoding)!
                         
-                        NSLog("Response ==> %@", responseData);
+                        if(DEBUG) {NSLog("Response ==> %@", responseData);}
                         
                         var error: NSError?
                         
@@ -125,18 +117,15 @@ class registerController: UIViewController {
                         
                         
                         
-                        NSLog("Success: %@", success);
+                        if(DEBUG) {NSLog("Success: %@", success);}
                         
                         if(success == "true")
                         {
-                            NSLog("Sign Up SUCCESS");
+                            if(DEBUG) {NSLog("Sign Up SUCCESS");}
                             var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
                             prefs.setObject(username, forKey: "USERNAME")
                             prefs.setInteger(1, forKey: "ISLOGGEDIN")
-                            //prefs.setObject(cookie, forKey: "COOKIE")
-                            
-                            
-                            
+                            prefs.setObject(password, forKey: "PASSWORD")
                             prefs.synchronize()
                             
                             self.performSegueWithIdentifier("registerTOoverviewSegue", sender: self)
@@ -178,11 +167,11 @@ class registerController: UIViewController {
                 }
             }
             else {
-                NSLog("Sign Up SUCCESS");
+                if(DEBUG) {NSLog("Sign Up BYPASSED");}
                 var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
                 prefs.setObject("networkBypassed", forKey: "USERNAME")
                 prefs.setInteger(1, forKey: "ISLOGGEDIN")
-                //prefs.setObject(cookie, forKey: "COOKIE")
+
                 
                 
                 

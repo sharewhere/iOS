@@ -10,8 +10,7 @@ import Foundation
 
 class networkService{
     private let serverID : Int = 3;  // set for the server to use
-    private let useNetwork: Bool = true; // when the servers are down, set to false
-    
+    private let useNetwork: Bool = true; // when the servers are down, set to false    
     
     private let server : String = "http://10.171.204.139:8000"; // 0 - on campus only
     private let Jimmy : String = "http://104.211.0.152:80";     // 1 - only up when working together
@@ -36,7 +35,4 @@ class networkService{
         
         return server;
     }
-    
-    
-    
 }
