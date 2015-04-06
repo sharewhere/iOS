@@ -153,7 +153,7 @@
         <!--Requests-->
         <scene sceneID="1I9-Lo-jWb">
             <objects>
-                <viewController title="Requests" id="hJ8-Mb-hxA" sceneMemberID="viewController">
+                <viewController title="Requests" id="hJ8-Mb-hxA" customClass="browseOffers" customModule="ShareWhere" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RPd-hd-ynR"/>
                         <viewControllerLayoutGuide type="bottom" id="IvG-Ao-bUU"/>
@@ -165,6 +165,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vgp-ic-fbI">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="hJ8-Mb-hxA" id="W6k-oM-b3j"/>
+                                    <outlet property="delegate" destination="hJ8-Mb-hxA" id="vyl-go-DnU"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -178,6 +182,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="vgp-ic-fbI" id="SE2-A7-WJB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmP-y0-bBS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -186,7 +193,7 @@
         <!--Requests-->
         <scene sceneID="bPn-2h-vUJ">
             <objects>
-                <viewController id="Snf-Hs-ywc" sceneMemberID="viewController">
+                <viewController id="Snf-Hs-ywc" customClass="browseRequests" customModule="ShareWhere" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s9X-xd-Rmv"/>
                         <viewControllerLayoutGuide type="bottom" id="NEQ-jk-fxj"/>
@@ -198,6 +205,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="usr-Lj-s2D">
                                 <rect key="frame" x="0.0" y="-44" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Snf-Hs-ywc" id="dXA-0Q-pFH"/>
+                                    <outlet property="delegate" destination="Snf-Hs-ywc" id="Csv-qU-dnc"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -207,6 +218,9 @@
                         <barButtonItem key="backBarButtonItem" title="Offers" id="ggf-An-WDs"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="usr-Lj-s2D" id="BfX-Ur-FcE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nCd-52-1al" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

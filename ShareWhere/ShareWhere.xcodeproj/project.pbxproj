@@ -23,6 +23,8 @@
 		3C323B2E1AC605230099A70B /* loginControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C323B2D1AC605230099A70B /* loginControler.swift */; };
 		3C5D3E4A1AC6FE5D00A95463 /* testingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D3E491AC6FE5D00A95463 /* testingService.swift */; };
 		3CA1F9D61AC6071400E16372 /* networkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA1F9D51AC6071400E16372 /* networkService.swift */; };
+		3CD2B7821AD3287F00F13045 /* browseOffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD2B7811AD3287F00F13045 /* browseOffers.swift */; };
+		3CD2B7841AD3292500F13045 /* browseRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD2B7831AD3292500F13045 /* browseRequests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		3C323B2D1AC605230099A70B /* loginControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginControler.swift; sourceTree = "<group>"; };
 		3C5D3E491AC6FE5D00A95463 /* testingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testingService.swift; sourceTree = "<group>"; };
 		3CA1F9D51AC6071400E16372 /* networkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = networkService.swift; sourceTree = "<group>"; };
+		3CD2B7811AD3287F00F13045 /* browseOffers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = browseOffers.swift; sourceTree = "<group>"; };
+		3CD2B7831AD3292500F13045 /* browseRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = browseRequests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,8 @@
 				3C323B2D1AC605230099A70B /* loginControler.swift */,
 				3C1089EB1AC5F9D10020810A /* ViewController.swift */,
 				3C0E82B41AC6059C00D4D55F /* registerController.swift */,
+				3CD2B7811AD3287F00F13045 /* browseOffers.swift */,
+				3CD2B7831AD3292500F13045 /* browseRequests.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -275,7 +281,9 @@
 				3CA1F9D61AC6071400E16372 /* networkService.swift in Sources */,
 				3C0E82B51AC6059C00D4D55F /* registerController.swift in Sources */,
 				3C5D3E4A1AC6FE5D00A95463 /* testingService.swift in Sources */,
+				3CD2B7821AD3287F00F13045 /* browseOffers.swift in Sources */,
 				3C1089EC1AC5F9D10020810A /* ViewController.swift in Sources */,
+				3CD2B7841AD3292500F13045 /* browseRequests.swift in Sources */,
 				3C1089EA1AC5F9D10020810A /* AppDelegate.swift in Sources */,
 				3C323B2E1AC605230099A70B /* loginControler.swift in Sources */,
 			);
