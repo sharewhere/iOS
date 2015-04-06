@@ -162,7 +162,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vgp-ic-fbI">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vgp-ic-fbI">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -172,6 +172,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="vgp-ic-fbI" secondAttribute="centerY" constant="-7.5" id="K0K-lY-SdF"/>
+                            <constraint firstItem="vgp-ic-fbI" firstAttribute="top" secondItem="RPd-hd-ynR" secondAttribute="bottom" id="Ova-S8-ajo"/>
+                            <constraint firstItem="vgp-ic-fbI" firstAttribute="leading" secondItem="bZg-9g-O5i" secondAttribute="leading" id="SeI-Oo-yBT"/>
+                            <constraint firstAttribute="centerX" secondItem="vgp-ic-fbI" secondAttribute="centerX" id="qD6-3D-uwB"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Offers" id="awi-hu-pmS">
                         <barButtonItem key="backBarButtonItem" title="yes" id="8S9-G4-9U1"/>
@@ -202,8 +208,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="usr-Lj-s2D">
-                                <rect key="frame" x="0.0" y="-44" width="600" height="600"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="usr-Lj-s2D">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Snf-Hs-ywc" id="dXA-0Q-pFH"/>
@@ -212,6 +218,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="usr-Lj-s2D" firstAttribute="leading" secondItem="xyP-Ip-kD5" secondAttribute="leading" id="1Vn-Jb-l9S"/>
+                            <constraint firstAttribute="centerY" secondItem="usr-Lj-s2D" secondAttribute="centerY" constant="-10" id="Iqw-wy-Pdk"/>
+                            <constraint firstAttribute="centerX" secondItem="usr-Lj-s2D" secondAttribute="centerX" id="NKr-Xy-j2a"/>
+                            <constraint firstItem="usr-Lj-s2D" firstAttribute="bottom" secondItem="NEQ-jk-fxj" secondAttribute="top" id="yPH-Qd-HKW"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Requests" id="Jbn-rY-9pg">
