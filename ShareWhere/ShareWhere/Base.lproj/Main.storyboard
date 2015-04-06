@@ -119,37 +119,6 @@
             </objects>
             <point key="canvasLocation" x="1177" y="1081"/>
         </scene>
-        <!--Search-->
-        <scene sceneID="xie-7q-rgS">
-            <objects>
-                <viewController title="Search" id="wTv-cs-COF" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nAG-Qg-fvZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="pFp-kD-JbV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hh9-xR-wxj">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search view" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcj-yy-SQZ">
-                                <rect key="frame" x="254" y="289" width="93" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="gcj-yy-SQZ" secondAttribute="centerX" id="YDZ-wK-Vty"/>
-                            <constraint firstAttribute="centerY" secondItem="gcj-yy-SQZ" secondAttribute="centerY" id="jV8-X1-0yV"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="search-7.png" id="IHh-gl-sLX"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1ry-wj-iUi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3802" y="715"/>
-        </scene>
         <!--Settings-->
         <scene sceneID="IqU-UE-jLy">
             <objects>
@@ -165,7 +134,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change all the things, delete profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfL-pG-Y01">
                                 <rect key="frame" x="165" y="289" width="271" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -181,10 +150,10 @@
             </objects>
             <point key="canvasLocation" x="2992" y="1436"/>
         </scene>
-        <!--Home-->
+        <!--Requests-->
         <scene sceneID="1I9-Lo-jWb">
             <objects>
-                <viewController title="Home" id="hJ8-Mb-hxA" sceneMemberID="viewController">
+                <viewController title="Requests" id="hJ8-Mb-hxA" customClass="browseOffers" customModule="ShareWhere" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RPd-hd-ynR"/>
                         <viewControllerLayoutGuide type="bottom" id="IvG-Ao-bUU"/>
@@ -193,24 +162,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lent &amp; borrowed items" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bh8-ht-pQb">
-                                <rect key="frame" x="213" y="289" width="174" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vgp-ic-fbI">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="hJ8-Mb-hxA" id="W6k-oM-b3j"/>
+                                    <outlet property="delegate" destination="hJ8-Mb-hxA" id="vyl-go-DnU"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Bh8-ht-pQb" secondAttribute="centerX" id="LMj-YM-8va"/>
-                            <constraint firstAttribute="centerY" secondItem="Bh8-ht-pQb" secondAttribute="centerY" id="xaI-m0-h8w"/>
+                            <constraint firstAttribute="centerY" secondItem="vgp-ic-fbI" secondAttribute="centerY" constant="-7.5" id="K0K-lY-SdF"/>
+                            <constraint firstItem="vgp-ic-fbI" firstAttribute="top" secondItem="RPd-hd-ynR" secondAttribute="bottom" id="Ova-S8-ajo"/>
+                            <constraint firstItem="vgp-ic-fbI" firstAttribute="leading" secondItem="bZg-9g-O5i" secondAttribute="leading" id="SeI-Oo-yBT"/>
+                            <constraint firstAttribute="centerX" secondItem="vgp-ic-fbI" secondAttribute="centerX" id="qD6-3D-uwB"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="home-7.png" id="xP4-hc-mej"/>
+                    <navigationItem key="navigationItem" title="Offers" id="awi-hu-pmS">
+                        <barButtonItem key="backBarButtonItem" title="yes" id="8S9-G4-9U1"/>
+                        <barButtonItem key="leftBarButtonItem" id="80m-wC-rP1"/>
+                        <barButtonItem key="rightBarButtonItem" title="Requests" id="trl-EI-GPL">
+                            <connections>
+                                <segue destination="Snf-Hs-ywc" kind="show" id="YOM-2a-Hzl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="vgp-ic-fbI" id="SE2-A7-WJB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmP-y0-bBS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2983" y="-654"/>
+            <point key="canvasLocation" x="3795" y="-654"/>
+        </scene>
+        <!--Requests-->
+        <scene sceneID="bPn-2h-vUJ">
+            <objects>
+                <viewController id="Snf-Hs-ywc" customClass="browseRequests" customModule="ShareWhere" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s9X-xd-Rmv"/>
+                        <viewControllerLayoutGuide type="bottom" id="NEQ-jk-fxj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xyP-Ip-kD5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="usr-Lj-s2D">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Snf-Hs-ywc" id="dXA-0Q-pFH"/>
+                                    <outlet property="delegate" destination="Snf-Hs-ywc" id="Csv-qU-dnc"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="usr-Lj-s2D" firstAttribute="leading" secondItem="xyP-Ip-kD5" secondAttribute="leading" id="1Vn-Jb-l9S"/>
+                            <constraint firstAttribute="centerY" secondItem="usr-Lj-s2D" secondAttribute="centerY" constant="-10" id="Iqw-wy-Pdk"/>
+                            <constraint firstAttribute="centerX" secondItem="usr-Lj-s2D" secondAttribute="centerX" id="NKr-Xy-j2a"/>
+                            <constraint firstItem="usr-Lj-s2D" firstAttribute="bottom" secondItem="NEQ-jk-fxj" secondAttribute="top" id="yPH-Qd-HKW"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Requests" id="Jbn-rY-9pg">
+                        <barButtonItem key="backBarButtonItem" title="Offers" id="ggf-An-WDs"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="usr-Lj-s2D" id="BfX-Ur-FcE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nCd-52-1al" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4473" y="-651"/>
         </scene>
         <!--Profile-->
         <scene sceneID="h7C-NZ-TWE">
@@ -227,7 +253,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zuf-0x-2mQ">
                                 <rect key="frame" x="256" y="289" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -255,8 +281,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="OGY-1n-GRX" kind="relationship" relationship="viewControllers" id="IWr-6w-kN1"/>
-                        <segue destination="wTv-cs-COF" kind="relationship" relationship="viewControllers" id="m2u-XZ-lKi"/>
-                        <segue destination="hJ8-Mb-hxA" kind="relationship" relationship="viewControllers" id="YC1-CW-0zy"/>
+                        <segue destination="eHE-QE-sMW" kind="relationship" relationship="viewControllers" id="YC1-CW-0zy"/>
                         <segue destination="U1R-Fh-38b" kind="relationship" relationship="viewControllers" id="TNj-sU-Zv3"/>
                     </connections>
                 </tabBarController>
@@ -388,13 +413,31 @@
             </objects>
             <point key="canvasLocation" x="1177" y="1921"/>
         </scene>
+        <!--Browse-->
+        <scene sceneID="5uw-Gw-oVL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eHE-QE-sMW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Browse" image="home-7.png" id="xP4-hc-mej"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EHw-di-b3e">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hJ8-Mb-hxA" kind="relationship" relationship="rootViewController" id="9IU-BC-yPj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hup-69-IJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2983" y="-654"/>
+        </scene>
     </scenes>
     <resources>
         <image name="circle-user-7.png" width="30" height="30"/>
         <image name="gear-7.png" width="30" height="30"/>
         <image name="home-7.png" width="30" height="30"/>
         <image name="ic_launcher.png" width="192" height="192"/>
-        <image name="search-7.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Qco-Hj-7b9"/>

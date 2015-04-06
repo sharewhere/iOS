@@ -32,7 +32,6 @@ class loginController: UIViewController {
     @IBAction func loginTapped(sender: UIButton) {
         var username:NSString = txtUsername.text
         var password:NSString = txtPassword.text
-        var DEBUG:Bool = false;
         
         if ( username.isEqualToString("") || password.isEqualToString("") ) {
             
