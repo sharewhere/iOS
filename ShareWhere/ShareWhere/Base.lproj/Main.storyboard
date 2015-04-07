@@ -148,12 +148,62 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yzH-sz-7Nv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2992" y="1436"/>
+            <point key="canvasLocation" x="3795" y="724"/>
         </scene>
-        <!--Requests-->
+        <!--itemDetail-->
+        <scene sceneID="Rpa-lz-bt2">
+            <objects>
+                <viewController title="itemDetail" id="AQQ-HF-UQA" customClass="itemDetail" customModule="ShareWhere" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ryf-hL-YDy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Opy-bA-Nia"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MrY-x0-VV4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIh-OV-yGt">
+                                <rect key="frame" x="226" y="90" width="149" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="149" id="Lol-Yb-21y"/>
+                                    <constraint firstAttribute="height" constant="21" id="Pqr-A9-T1x"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYc-CF-5gn">
+                                <rect key="frame" x="175" y="139.5" width="250" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="TE1-bc-2KR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="DYc-CF-5gn" secondAttribute="centerX" id="6q0-no-dxm"/>
+                            <constraint firstAttribute="centerX" secondItem="yIh-OV-yGt" secondAttribute="centerX" id="HCt-j0-4Dy"/>
+                            <constraint firstAttribute="centerY" secondItem="DYc-CF-5gn" secondAttribute="centerY" constant="150.5" id="dyv-Zh-seZ"/>
+                            <constraint firstAttribute="centerY" secondItem="yIh-OV-yGt" secondAttribute="centerY" constant="199.5" id="oVD-KO-Obh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FGo-zH-xff"/>
+                    <connections>
+                        <outlet property="itemDescr" destination="DYc-CF-5gn" id="LwY-wD-kr8"/>
+                        <outlet property="itemName" destination="yIh-OV-yGt" id="OQ9-YV-ZaK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3nH-Km-m5x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4485" y="-1374"/>
+        </scene>
+        <!--Offers-->
         <scene sceneID="1I9-Lo-jWb">
             <objects>
-                <viewController title="Requests" id="hJ8-Mb-hxA" customClass="browseOffers" customModule="ShareWhere" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Offers" title="Offers" id="hJ8-Mb-hxA" customClass="browseOffers" customModule="ShareWhere" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RPd-hd-ynR"/>
                         <viewControllerLayoutGuide type="bottom" id="IvG-Ao-bUU"/>
@@ -165,6 +215,18 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vgp-ic-fbI">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="MLa-sz-ILP">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MLa-sz-ILP" id="0iw-BO-MDQ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="AQQ-HF-UQA" kind="show" identifier="offerDetail" id="y9N-ng-MOC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="hJ8-Mb-hxA" id="W6k-oM-b3j"/>
                                     <outlet property="delegate" destination="hJ8-Mb-hxA" id="vyl-go-DnU"/>
@@ -180,7 +242,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Offers" id="awi-hu-pmS">
-                        <barButtonItem key="backBarButtonItem" title="yes" id="8S9-G4-9U1"/>
                         <barButtonItem key="leftBarButtonItem" id="80m-wC-rP1"/>
                         <barButtonItem key="rightBarButtonItem" title="Requests" id="trl-EI-GPL">
                             <connections>
@@ -199,7 +260,7 @@
         <!--Requests-->
         <scene sceneID="bPn-2h-vUJ">
             <objects>
-                <viewController id="Snf-Hs-ywc" customClass="browseRequests" customModule="ShareWhere" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Requests" id="Snf-Hs-ywc" customClass="browseRequests" customModule="ShareWhere" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s9X-xd-Rmv"/>
                         <viewControllerLayoutGuide type="bottom" id="NEQ-jk-fxj"/>
@@ -211,6 +272,18 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="usr-Lj-s2D">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Amv-Og-rgd">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Amv-Og-rgd" id="HHp-NN-pTT">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="AQQ-HF-UQA" kind="show" identifier="requestDetail" id="JC2-Qm-vaS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="Snf-Hs-ywc" id="dXA-0Q-pFH"/>
                                     <outlet property="delegate" destination="Snf-Hs-ywc" id="Csv-qU-dnc"/>
@@ -227,7 +300,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Requests" id="Jbn-rY-9pg">
-                        <barButtonItem key="backBarButtonItem" title="Offers" id="ggf-An-WDs"/>
+                        <barButtonItem key="backBarButtonItem" title="Offers" id="fux-kf-aYO"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -236,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nCd-52-1al" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4473" y="-651"/>
+            <point key="canvasLocation" x="4485" y="-654"/>
         </scene>
         <!--Profile-->
         <scene sceneID="h7C-NZ-TWE">
@@ -442,5 +515,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="Qco-Hj-7b9"/>
         <segue reference="ZVk-al-CtH"/>
+        <segue reference="y9N-ng-MOC"/>
     </inferredMetricsTieBreakers>
 </document>

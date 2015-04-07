@@ -18,8 +18,8 @@ class networkService{
     private let DaleUbuServer : String = "http://192.168.1.86:8000";   // 3 - only at home
     
     private var items: [String] = [];
-    private var jsonData = [];
-    
+    private var jsonData: NSArray = [];
+    private var itemIndex = 0;
     
     func bypass() -> Bool {
         return useNetwork;
@@ -40,23 +40,20 @@ class networkService{
         return server;
     }
     
-    func getData(url: String, index: String) -> [String] {
+    func getData(url: String, index: String) -> AnyObject {
         
         var parsedJSON = parseJSON(getJSON(url));
-        if let element = parsedJSON[index] {
-            getItems(element);
-        }
-        
-        return items
+        var element = parsedJSON[index] as? NSArray
+        return element!;
     }
     
-    func getItems(element: AnyObject) {
+    func getItems(element: AnyObject) -> [String]{
         var count = element.count;
         for(var i = 0; i < count; i++) {
             var test: String = element[i]["shar_name"] as String;
             items.append(test);
         }
-        jsonData = element as NSArray;
+        return items;
     }
     
     func getJSON(urlToRequest: String) -> NSData{
@@ -67,5 +64,18 @@ class networkService{
         var error: NSError?
         var boardsDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as NSDictionary
         return boardsDictionary
+    }
+    
+    func setIndex(index: Int) {
+        itemIndex = index;
+        println("Ii: \(itemIndex)   in: \(index)");
+    }
+    
+    func getIndex() -> Int {
+        return itemIndex;
+    }
+    
+    func getItem() -> NSArray{
+        return jsonData as NSArray;
     }
 }

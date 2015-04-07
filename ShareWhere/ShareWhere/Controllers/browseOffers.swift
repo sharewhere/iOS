@@ -14,11 +14,14 @@ class browseOffers: UIViewController, UITableViewDelegate, UITableViewDataSource
     var getURL: String = networkService().servername() + "/browseoffers";
     var items :[String] = [];
     var DEBUG = testingService().canDebug();
+    var index: Int!
+    var elements: AnyObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        items = networkService().getData(getURL, index: "offers");
+        elements = networkService().getData(getURL, index: "offers");
+        items = networkService().getItems(elements);
     }
     
     
@@ -35,6 +38,21 @@ class browseOffers: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("You selected cell #\(indexPath.row)!")
+        index = indexPath.row;
+        
+        self.performSegueWithIdentifier("offerDetail", sender: self)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if(segue.identifier == "offerDetail") {
+            
+            var itemView = (segue.destinationViewController as itemDetail)
+            itemView.index = index
+            itemView.items = elements as NSArray;
+            itemView.caller = "offers";
+        }
+    }
+    
+
 }
