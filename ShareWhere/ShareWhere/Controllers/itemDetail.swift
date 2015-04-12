@@ -10,6 +10,7 @@ import UIKit
 
 class itemDetail: UIViewController {
 
+    @IBOutlet var button: UIButton!
     @IBOutlet var itemName: UILabel!
     @IBOutlet var itemDescr: UILabel!
 
@@ -30,6 +31,13 @@ class itemDetail: UIViewController {
         
         var description: String = items[index]["description"] as String;
         self.itemDescr.text = description;
+        
+        if(caller == "offers") {
+            button.setTitle("Request this item!", forState: UIControlState.Normal);
+        }
+        else {
+            button.setTitle("Offer a similiar item!", forState: UIControlState.Normal);
+        }
     }
     
     

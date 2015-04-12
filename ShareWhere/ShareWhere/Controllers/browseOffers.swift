@@ -31,7 +31,8 @@ class browseOffers: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
-        
+        cell.backgroundColor = UIColor.clearColor();
+        cell.textLabel?.textColor = UIColor.whiteColor();
         cell.textLabel?.text = self.items[indexPath.row]
         
         return cell

@@ -23,6 +23,11 @@
 		3C323B2E1AC605230099A70B /* loginControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C323B2D1AC605230099A70B /* loginControler.swift */; };
 		3C3F84951AD373D500291A36 /* itemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3F84941AD373D500291A36 /* itemDetail.swift */; };
 		3C5D3E4A1AC6FE5D00A95463 /* testingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5D3E491AC6FE5D00A95463 /* testingService.swift */; };
+		3C7767861AD482340089A309 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7767851AD482340089A309 /* SystemConfiguration.framework */; };
+		3C7767881AD482420089A309 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7767871AD482420089A309 /* CFNetwork.framework */; };
+		3C77678A1AD482510089A309 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7767891AD482510089A309 /* MobileCoreServices.framework */; };
+		3C77678C1AD4825C0089A309 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C77678B1AD4825C0089A309 /* Security.framework */; };
+		3C7767901AD494A60089A309 /* profile_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C77678F1AD494A60089A309 /* profile_placeholder.png */; };
 		3CA1F9D61AC6071400E16372 /* networkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA1F9D51AC6071400E16372 /* networkService.swift */; };
 		3CD2B7821AD3287F00F13045 /* browseOffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD2B7811AD3287F00F13045 /* browseOffers.swift */; };
 		3CD2B7841AD3292500F13045 /* browseRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD2B7831AD3292500F13045 /* browseRequests.swift */; };
@@ -59,6 +64,13 @@
 		3C323B2D1AC605230099A70B /* loginControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginControler.swift; sourceTree = "<group>"; };
 		3C3F84941AD373D500291A36 /* itemDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = itemDetail.swift; sourceTree = "<group>"; };
 		3C5D3E491AC6FE5D00A95463 /* testingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testingService.swift; sourceTree = "<group>"; };
+		3C7767821AD4815B0089A309 /* LayerKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LayerKit.framework; sourceTree = "<group>"; };
+		3C7767841AD4815B0089A309 /* layer-client-messaging-schema.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "layer-client-messaging-schema.bundle"; sourceTree = "<group>"; };
+		3C7767851AD482340089A309 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3C7767871AD482420089A309 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		3C7767891AD482510089A309 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		3C77678B1AD4825C0089A309 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3C77678F1AD494A60089A309 /* profile_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile_placeholder.png; path = Images/profile_placeholder.png; sourceTree = "<group>"; };
 		3CA1F9D51AC6071400E16372 /* networkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = networkService.swift; sourceTree = "<group>"; };
 		3CD2B7811AD3287F00F13045 /* browseOffers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = browseOffers.swift; sourceTree = "<group>"; };
 		3CD2B7831AD3292500F13045 /* browseRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = browseRequests.swift; sourceTree = "<group>"; };
@@ -69,6 +81,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C77678C1AD4825C0089A309 /* Security.framework in Frameworks */,
+				3C77678A1AD482510089A309 /* MobileCoreServices.framework in Frameworks */,
+				3C7767881AD482420089A309 /* CFNetwork.framework in Frameworks */,
+				3C7767861AD482340089A309 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +101,11 @@
 		3C1089DB1AC5F9D10020810A = {
 			isa = PBXGroup;
 			children = (
+				3C77678B1AD4825C0089A309 /* Security.framework */,
+				3C7767891AD482510089A309 /* MobileCoreServices.framework */,
+				3C7767871AD482420089A309 /* CFNetwork.framework */,
+				3C7767851AD482340089A309 /* SystemConfiguration.framework */,
+				3C7767811AD4815B0089A309 /* LayerKit.embeddedframework */,
 				3C1089E61AC5F9D10020810A /* ShareWhere */,
 				3C1089FC1AC5F9D10020810A /* ShareWhereTests */,
 				3C1089E51AC5F9D10020810A /* Products */,
@@ -165,6 +186,7 @@
 		3C323B201AC601820099A70B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3C77678F1AD494A60089A309 /* profile_placeholder.png */,
 				3C323B211AC601C50099A70B /* circle-user-7.png */,
 				3C323B221AC601C50099A70B /* gear-7.png */,
 				3C323B231AC601C50099A70B /* home-7.png */,
@@ -173,6 +195,24 @@
 				3C323B261AC601C50099A70B /* search-7.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		3C7767811AD4815B0089A309 /* LayerKit.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				3C7767821AD4815B0089A309 /* LayerKit.framework */,
+				3C7767831AD4815B0089A309 /* Resources */,
+			);
+			name = LayerKit.embeddedframework;
+			path = ShareWhere/Frameworks/LayerKit.embeddedframework;
+			sourceTree = "<group>";
+		};
+		3C7767831AD4815B0089A309 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3C7767841AD4815B0089A309 /* layer-client-messaging-schema.bundle */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +298,7 @@
 				3C323B291AC601C50099A70B /* home-7.png in Resources */,
 				3C1089EF1AC5F9D10020810A /* Main.storyboard in Resources */,
 				3C1089F41AC5F9D10020810A /* LaunchScreen.xib in Resources */,
+				3C7767901AD494A60089A309 /* profile_placeholder.png in Resources */,
 				3C323B2B1AC601C50099A70B /* plus-simple-7.png in Resources */,
 				3C323B271AC601C50099A70B /* circle-user-7.png in Resources */,
 				3C323B281AC601C50099A70B /* gear-7.png in Resources */,
@@ -416,6 +457,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ShareWhere/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -426,6 +471,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ShareWhere/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

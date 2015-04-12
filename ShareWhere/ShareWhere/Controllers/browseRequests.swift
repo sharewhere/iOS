@@ -20,6 +20,8 @@ class browseRequests: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        //self.tableView.backgroundColor =
+        
         elements = networkService().getData(getURL, index: "requests");
         items = networkService().getItems(elements);
     }
@@ -31,7 +33,8 @@ class browseRequests: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
-        
+        cell.backgroundColor = UIColor.clearColor();
+        cell.textLabel?.textColor = UIColor.whiteColor();
         cell.textLabel?.text = self.items[indexPath.row]
         
         return cell
