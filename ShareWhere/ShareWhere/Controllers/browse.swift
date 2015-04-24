@@ -1,28 +1,35 @@
 //
-//  browseRequests.swift
+//  browse.swift
 //  ShareWhere
 //
-//  Created by Dale Driggs on 4/6/15.
+//  Created by Dale Driggs on 4/18/15.
 //  Copyright (c) 2015 ShareWhere. All rights reserved.
 //
 
 import UIKit
 
-class browseRequests: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet var tableView: UITableView!
+// Not implemented....  This is meant to replace browseOffers/browseRequests
 
-    var getURL: String = networkService().servername() + "/browserequests";
+class browse: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet var tableView: UITableView!
+    
+
+    var getURL: String = networkService().servername() + "/browseoffers";
     var items :[String] = [];
     var DEBUG = testingService().canDebug();
-    var elements: AnyObject!
     var index: Int!
+    var elements: AnyObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        elements = networkService().getData(getURL, index: "requests");
+        elements = networkService().getData(getURL, index: "offers");
         items = networkService().getItems(elements);
     }
+    
+    @IBAction func indexControl(sender: UISegmentedControl) {
+    }
+    
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,17 +47,20 @@ class browseRequests: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         index = indexPath.row;
-        self.performSegueWithIdentifier("requestDetail", sender: self)
+        
+        self.performSegueWithIdentifier("offerDetail", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if(segue.identifier == "requestDetail") {
+        if(segue.identifier == "offerDetail") {
             
             var itemView = (segue.destinationViewController as! itemDetail)
             itemView.index = index
             itemView.items = elements as! NSArray;
-            itemView.caller = "requests";
+            itemView.caller = "offers";
         }
     }
+    
+    
 }

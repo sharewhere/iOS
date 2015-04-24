@@ -9,7 +9,7 @@
 import Foundation
 
 class testingService{
-    private let canResetData: Bool = true; // useful for testing, set NSUserDefaults to nil
+    private let canResetData: Bool = false; // useful for testing, set NSUserDefaults to nil
     private let DEBUG: Bool = true;        // prints all the log statements
     
     

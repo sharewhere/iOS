@@ -51,7 +51,26 @@ class ViewController: UIViewController {
                 
             } else {
                 // overview
-                self.performSegueWithIdentifier("overviewSegue", sender: self)
+                var count = 0;
+                
+                var cookiesD:[NSHTTPCookie] = NSHTTPCookieStorage.sharedHTTPCookieStorage().cookies as! [NSHTTPCookie]
+                for cookieD:NSHTTPCookie in cookiesD as [NSHTTPCookie] {
+                    println("VC: \(cookieD)");
+                    count++;
+                }
+                var goodCookie = false;
+                var response = networkService().parseJSON(networkService().getJSON(networkService().servername() + "/cookiecheck"));
+                
+                if(DEBUG) {println(response["cookieValid"]);}
+                goodCookie = response["cookieValid"] as! Bool;
+                
+                if(count > 0 && goodCookie) {
+                    self.performSegueWithIdentifier("overviewSegue", sender: self)
+                }
+                else {
+                    self.performSegueWithIdentifier("loginSegue", sender: self)
+                }
+                
             }
     }
     

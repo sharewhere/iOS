@@ -8,7 +8,7 @@
 
 import UIKit
 
-class registerController: UIViewController {
+class registerController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtSignupUsername: UITextField!
     @IBOutlet weak var txtSignupPassword: UITextField!
     @IBOutlet weak var txtSignupPasswordConfirm: UITextField!
@@ -22,10 +22,16 @@ class registerController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.txtSignupEmail.delegate = self
+        self.txtSignupUsername.delegate = self
+        self.txtSignupPassword.delegate = self
+        self.txtSignupPasswordConfirm.delegate = self
+        
         if(DEBUG) {
             NSLog("LoginVC - server being used: %@", server);
         }
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -73,7 +79,7 @@ class registerController: UIViewController {
                 if(DEBUG) {NSLog("PostData: %@",post);}
                 
                 var urlStr : NSString = server.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-                var url:NSURL = NSURL(string:urlStr)!
+                var url:NSURL = NSURL(string:urlStr as String)!
 
                 var postData:NSData = post.dataUsingEncoding(NSASCIIStringEncoding)!
                 
@@ -82,7 +88,7 @@ class registerController: UIViewController {
                 var request:NSMutableURLRequest = NSMutableURLRequest(URL: url)
                 request.HTTPMethod = "POST"
                 request.HTTPBody = postData
-                request.setValue(postLength, forHTTPHeaderField: "Content-Length")
+                request.setValue(postLength as String, forHTTPHeaderField: "Content-Length")
                 request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
                 request.setValue("application/json", forHTTPHeaderField: "Accept")
                 
@@ -93,7 +99,7 @@ class registerController: UIViewController {
                 var urlData: NSData? = NSURLConnection.sendSynchronousRequest(request, returningResponse:&response, error:&reponseError)
                 
                 if ( urlData != nil ) {
-                    let res = response as NSHTTPURLResponse!;
+                    let res = response as! NSHTTPURLResponse!;
                     
                     if(DEBUG) {NSLog("Response code: %ld", res.statusCode);}
                     
@@ -110,10 +116,10 @@ class registerController: UIViewController {
                         
                         var error: NSError?
                         
-                        let jsonData:NSDictionary = NSJSONSerialization.JSONObjectWithData(urlData!, options:NSJSONReadingOptions.MutableContainers , error: &error) as NSDictionary
+                        let jsonData:NSDictionary = NSJSONSerialization.JSONObjectWithData(urlData!, options:NSJSONReadingOptions.MutableContainers , error: &error) as! NSDictionary
                         
                         
-                        let success:NSString = jsonData.valueForKey("success") as NSString
+                        let success:NSString = jsonData.valueForKey("success") as! NSString
                         
                         
                         
@@ -133,13 +139,13 @@ class registerController: UIViewController {
                             var error_msg:NSString
                             
                             if jsonData["errorMessage"] as? NSString != nil {
-                                error_msg = jsonData["errorMessage"] as NSString
+                                error_msg = jsonData["errorMessage"] as! NSString
                             } else {
                                 error_msg = "Unknown Error"
                             }
                             var alertView:UIAlertView = UIAlertView()
                             alertView.title = "Sign Up Failed!"
-                            alertView.message = error_msg
+                            alertView.message = error_msg as String
                             alertView.delegate = self
                             alertView.addButtonWithTitle("OK")
                             alertView.show()
@@ -183,7 +189,7 @@ class registerController: UIViewController {
         
     }
     
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {   //delegate method
+    func textFieldShouldReturn(textField: UITextField) -> Bool {   //delegate method
         textField.resignFirstResponder()
         return true
     }

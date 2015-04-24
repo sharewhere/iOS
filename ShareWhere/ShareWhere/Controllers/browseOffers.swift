@@ -22,6 +22,7 @@ class browseOffers: UIViewController, UITableViewDelegate, UITableViewDataSource
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         elements = networkService().getData(getURL, index: "offers");
         items = networkService().getItems(elements);
+        println(elements);
     }
     
     
@@ -30,9 +31,9 @@ class browseOffers: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         cell.backgroundColor = UIColor.clearColor();
-        cell.textLabel?.textColor = UIColor.whiteColor();
+        cell.textLabel?.textColor = UIColor.blackColor();
         cell.textLabel?.text = self.items[indexPath.row]
         
         return cell
@@ -48,9 +49,9 @@ class browseOffers: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         if(segue.identifier == "offerDetail") {
             
-            var itemView = (segue.destinationViewController as itemDetail)
+            var itemView = (segue.destinationViewController as! itemDetail)
             itemView.index = index
-            itemView.items = elements as NSArray;
+            itemView.items = elements as! NSArray;
             itemView.caller = "offers";
         }
     }

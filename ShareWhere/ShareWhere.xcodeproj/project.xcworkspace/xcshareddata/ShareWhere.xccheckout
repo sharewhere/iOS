@@ -10,8 +10,6 @@
 	<string>ShareWhere</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>0172658E0AB690536375C4C9E4DFFA5A2CD459D4</key>
-		<string>https://github.com/layerhq/releases-ios.git</string>
 		<key>FB68B1AC5E45F118824173699AC14AE257A87106</key>
 		<string>https://github.com/sharewhere/iOS.git</string>
 	</dict>
@@ -19,8 +17,6 @@
 	<string>ShareWhere/ShareWhere.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>0172658E0AB690536375C4C9E4DFFA5A2CD459D4</key>
-		<string>../../../releases-ios</string>
 		<key>FB68B1AC5E45F118824173699AC14AE257A87106</key>
 		<string>../../..</string>
 	</dict>
@@ -39,14 +35,6 @@
 			<string>FB68B1AC5E45F118824173699AC14AE257A87106</string>
 			<key>IDESourceControlWCCName</key>
 			<string>iOS</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>0172658E0AB690536375C4C9E4DFFA5A2CD459D4</string>
-			<key>IDESourceControlWCCName</key>
-			<string>releases-ios</string>
 		</dict>
 	</array>
 </dict>
