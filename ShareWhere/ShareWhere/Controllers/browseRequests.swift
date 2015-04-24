@@ -14,11 +14,14 @@ class browseRequests: UIViewController, UITableViewDelegate, UITableViewDataSour
     var getURL: String = networkService().servername() + "/browserequests";
     var items :[String] = [];
     var DEBUG = testingService().canDebug();
+    var elements: AnyObject!
+    var index: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        items = networkService().getData(getURL, index: "requests");
+        elements = networkService().getData(getURL, index: "requests");
+        items = networkService().getItems(elements);
     }
     
     
@@ -27,14 +30,27 @@ class browseRequests: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
-        
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        cell.backgroundColor = UIColor.clearColor();
+        cell.textLabel?.textColor = UIColor.blackColor();
         cell.textLabel?.text = self.items[indexPath.row]
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("You selected cell #\(indexPath.row)!")
+        index = indexPath.row;
+        self.performSegueWithIdentifier("requestDetail", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if(segue.identifier == "requestDetail") {
+            
+            var itemView = (segue.destinationViewController as! itemDetail)
+            itemView.index = index
+            itemView.items = elements as! NSArray;
+            itemView.caller = "requests";
+        }
     }
 }
